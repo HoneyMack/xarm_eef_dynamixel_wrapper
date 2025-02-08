@@ -5,14 +5,15 @@ from dynamixel_sdk import PortHandler
 from dynamixel_sdk.robotis_def import *
 from xarm.wrapper import XArmAPI
 
-LATENCY_TIMER = 16
-DEFAULT_BAUDRATE = 1000000
+DEFAULT_LATENCY_TIMER = 16
+DEFAULT_BAUDRATE = 57600
 
 
 class EndEffectorPortHandler(PortHandler):
-    def __init__(self, xArmAPI: XArmAPI):
+    def __init__(self, xArmAPI: XArmAPI, baudrate:int=DEFAULT_BAUDRATE, latency_timer:int=DEFAULT_LATENCY_TIMER):
         self.is_open = False
-        self.baudrate = DEFAULT_BAUDRATE
+        self.baudrate = baudrate
+        self.latency_timer = latency_timer
         self.packet_start_time = 0.0
         self.packet_timeout = 0.0
         self.tx_time_per_byte = 0.0
@@ -64,7 +65,7 @@ class EndEffectorPortHandler(PortHandler):
         if self.is_open:
             self.closePort()
 
-        code = self.xapi.set_tgpio_modbus_timeout(LATENCY_TIMER * 2 + 2, is_transparent_transmission=True)
+        code = self.xapi.set_tgpio_modbus_timeout(self.latency_timer * 2 + 2, is_transparent_transmission=True)
         code = self.xapi.set_tgpio_modbus_baudrate(self.baudrate)
         self.is_open = True
 
