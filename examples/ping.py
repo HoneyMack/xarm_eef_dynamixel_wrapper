@@ -52,7 +52,7 @@ else:
         return ch
 
 from dynamixel_sdk import *                 # Uses Dynamixel SDK library
-from src.endeffector_port_handler import EndEffectorPortHandler
+from xarm_eef_dynamixel_wrapper.endeffector_port_handler import EndEffectorPortHandler
 
 from xarm.wrapper import XArmAPI
 
@@ -61,7 +61,7 @@ from xarm.wrapper import XArmAPI
 PROTOCOL_VERSION            = 2.0
 
 # Define the proper baudrate to search DYNAMIXELs. Note that XL320's baudrate is 1 M bps.
-BAUDRATE                = 57600
+BAUDRATE                = 1000000 #57600
 
 # Factory default ID of all DYNAMIXEL is 1
 DXL_ID                      = 1

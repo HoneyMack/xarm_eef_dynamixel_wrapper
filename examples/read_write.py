@@ -57,7 +57,7 @@ else:
 
 
 from dynamixel_sdk import *  # Uses Dynamixel SDK library
-from src.endeffector_port_handler import EndEffectorPortHandler
+from xarm_eef_dynamixel_wrapper.endeffector_port_handler import EndEffectorPortHandler
 
 from xarm.wrapper import XArmAPI
 
