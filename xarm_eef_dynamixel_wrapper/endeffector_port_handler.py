@@ -5,9 +5,7 @@ from dynamixel_sdk import PortHandler
 from dynamixel_sdk.robotis_def import *
 from xarm.wrapper import XArmAPI
 
-DEFAULT_LATENCY_TIMER = 16
-DEFAULT_BAUDRATE = 57600
-
+from xarm_eef_dynamixel_wrapper.constants import DEFAULT_BAUDRATE, DEFAULT_LATENCY_TIMER
 
 class EndEffectorPortHandler(PortHandler):
     def __init__(self, xArmAPI: XArmAPI, baudrate:int=DEFAULT_BAUDRATE, latency_timer:int=DEFAULT_LATENCY_TIMER):
