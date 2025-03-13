@@ -1,2 +1,3 @@
 dynamixel-sdk @ git+https://github.com/ROBOTIS-GIT/DynamixelSDK@main#subdirectory=python
 xArm-Python-SDK @ git+https://github.com/xArm-Developer/xArm-Python-SDK.git@master
+yaml_config @ git+https://github.com/HoneyMack/yaml_config.git

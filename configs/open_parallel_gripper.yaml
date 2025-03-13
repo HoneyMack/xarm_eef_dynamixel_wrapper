@@ -1,0 +1,14 @@
+dxl_config:
+  addr_goal_position: 116
+  addr_present_position: 132
+  addr_torque_enable: 64
+  baudrate: 1000000
+  id: 1
+  torque_disable: 0
+  torque_enable: 1
+  unit_effort: 0.001 # [mA/pulse]
+  unit_pos: 0.001534 # [rad/pulse]
+  unit_vel: 0.24 # [rad/s/pulse]
+gripper_close: 1.550874 # [rad]
+gripper_open: 5.60677 # [rad]
+xarm_ip: 192.168.10.251
